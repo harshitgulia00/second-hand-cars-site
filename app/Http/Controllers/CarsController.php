@@ -48,16 +48,18 @@ class CarsController extends Controller
         'image' => 'required|image'
     ]);
 
-    $uploadedFile = Cloudinary::upload(
-        $request->file('image')->getRealPath(),
-        [
-            'folder' => 'cars'
-        ]
-    );
-
-    $secure_url = $uploadedFile->getSecurePath();
-
-    $public_id = $uploadedFile->getPublicId();
+    $result;
+    if($request->hasFile('image')){
+                  $result = cloudinary()
+                    ->uploadApi()
+                    ->upload(
+                $request->file('image')->getRealPath(),
+                [
+                    'folder' => 'cars'
+                ]
+            );
+        $secure_url = $result['secure_url'];
+        $public_id  = $result['public_id'];
 
     $car = new Car();
 
@@ -79,6 +81,9 @@ class CarsController extends Controller
 
     return redirect('/admin/cars')
         ->with('message','Car Added Successfully');
+    }
+
+
 }
 
     /**
@@ -112,9 +117,22 @@ class CarsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(car $cars)
+    public function destroy(car $cars,$carId)
     {
-        //
+        $image = Car::find($carId);
+
+        if(!$image)
+        {
+            return "Image Not Found";
+        }
+
+        // delete from cloudinary
+        cloudinary()->uploadApi()->destroy($image->public_id);
+
+        // delete from db
+        $image->delete();
+
+        return response()->json(["msg"=>"delete successful"]);
     }
 
     public function CarsApi()

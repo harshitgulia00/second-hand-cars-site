@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactMessagesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('', [CarsController::class, 'featuredCars']);
+Route::get('/buynow', [BuyRequestController::class, 'create']);
 Route::get('/explore',[CarsController::class,'index']);
 Route::post('/message',[ContactMessagesController::class,'store']);
 Route::post('/addCar',[CarsController::class, 'store']);
@@ -42,5 +43,7 @@ Route::middleware(['auth','RoleCheck'])->group(function(){
         Route::view('sellRequests','admin.sellRequests');
         Route::view('messages','admin.Messages');
         Route::get('addCar',[CarsController::class,'create']);
+        Route::post('storecar',[CarsController::class,'store']);
+        Route::post('update/{carId}',[CarsController::class,'edit']);
     });
 });

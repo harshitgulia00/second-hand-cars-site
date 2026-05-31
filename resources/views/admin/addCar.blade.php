@@ -210,7 +210,7 @@ body {
     </div>
 @endif
 
-<form class="form" method="POST" action="/addcar" enctype="multipart/form-data">
+<form class="form" method="POST" action="/admin/storecar" enctype="multipart/form-data">
     @csrf
     <p class="title">Add Car <br>  </p>
         <br><br>

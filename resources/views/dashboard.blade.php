@@ -136,7 +136,7 @@
     </div>
     </center>
 
-    <center>
+    <!-- <center>
         <div class="bio" >
             <h2 class="text-2xl font-bold mb-4">Your Activities</h2>
             <p>Here you can see a summary of your recent activities on the platform.</p>
@@ -148,7 +148,7 @@
             <a> <button class="btn btn-outline-primary m-3">Saved Cars</button></a>
            </div>
         </div>
-    </center>
+    </center> -->
 
     <div>
         @if(Auth::user()->is_admin)

@@ -307,7 +307,10 @@ body{
 <script>
 
 $(document).ready(function(){
+    showcars();
+});
 
+function showcars(){
     $.get('/api/cars',function(response){
 
         var rows = '';
@@ -345,13 +348,11 @@ $(document).ready(function(){
 
                     <div class="action-btns">
 
-                        <a type="button" href="/admin/update/${car.id}" class="update-btn">
-                            Update
-                        </a>
+                       
 
-                        <a type="button" href="/admin/delete/${car.id}" class="delete-btn">
+                        <button type="button" onclick="deleteCar(${car.id})" class="delete-btn">
                             Delete
-                        </a>
+                        </button>
 
                     </div>
 
@@ -366,8 +367,14 @@ $(document).ready(function(){
         $('#content').html(rows);
 
     });
+}
 
-});
+function deleteCar(id){
+    $.get('/api/deleteCar/'+id,function(response){
+        alert(response.msg);
+        showcars();
+    })
+}
 
 </script>
 

@@ -50,6 +50,7 @@
                     html+=`
                         <div class="container bg-secondary text-white m-3 p-3 rounded">
                             <h4>` + buyRequest.name + `</h4>
+                            <p>Car ID : `+ buyRequest.car_id +`</p>
                             <p>` + buyRequest.email + ` || ` + buyRequest.phone + `</p><p>` + buyRequest.message + `</p><br>
                             <button onclick="accept(` + buyRequest.id + `)" class="btn btn-success">Accept</button>
                             <button onclick="reject(` + buyRequest.id + `)" class="btn btn-danger">Reject</button>
@@ -68,6 +69,7 @@
                     html+=`
                         <div class="container bg-success text-white m-3 p-3 rounded">
                             <h4>` + buyRequest.name + `</h4>
+                            <p>Car ID : `+ buyRequest.car_id +`</p>
                             <p>` + buyRequest.email + ` || ` + buyRequest.phone + `</p><p>` + buyRequest.message + `</p><br>
                         </div>
                     `
@@ -79,11 +81,13 @@
         $.get('/api/buyRequests/rejected',function(response){
             if(response.success){
                 let buyRequests = response.data;
+
                 let html=``;
                 for(let buyRequest of buyRequests){
                     html+=`
                         <div class="container bg-danger text-white m-3 p-3 rounded">
-                            <h4>` + buyRequest.name + `</h4>
+                            <h4>` + buyRequest.name + `</h4><br>
+                            <p>Car ID : `+ buyRequest.car_id +`</p>
                             <p>` + buyRequest.email + ` || ` + buyRequest.phone + `</p><p>` + buyRequest.message + `</p><br>
                         </div>
                     `
@@ -93,6 +97,15 @@
     }
     function accept(id){
         let url = `/api/buyRequest/accept/${id}`
+        $.get(url,function(response){
+            if(response.success){
+                pendingRequests();
+            }
+        })
+    }
+
+    function reject(id){
+        let url = `/api/buyRequest/reject/${id}`
         $.get(url,function(response){
             if(response.success){
                 pendingRequests();

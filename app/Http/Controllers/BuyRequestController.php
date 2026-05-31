@@ -14,6 +14,7 @@ class BuyRequestController extends Controller
     public function index()
     {
         $buyRequests = BuyRequest::where('status', 'pending')->get();
+        
         return response()->json([
             'success' => true,
             'data' => $buyRequests
@@ -47,12 +48,21 @@ class BuyRequestController extends Controller
         }
     }
 
+     public function reject($id)
+    {
+        if($buyRequests = BuyRequest::where('id',$id)->update(['status'=>'rejected'])){
+            return response()->json([
+            'success' => true
+        ]);
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        
     }
 
     /**

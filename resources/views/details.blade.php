@@ -304,13 +304,13 @@ body{
 
                 <div class="buttons">
 
-                    <a href="#" class="btn buy-btn">
+                    <a href="buynow" class="btn buy-btn">
                         Buy Now
                     </a>
 
-                    <button onclick="saveCar({{$details->id}})" class="btn back-btn">
+                    <!-- <button onclick="saveCar({{$details->id}})" class="btn back-btn">
                         Save Car
-                    </button>
+                    </button> -->
 
                 </div>
 

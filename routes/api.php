@@ -19,6 +19,7 @@ Route::get('/buyRequests/rejected',[BuyRequestController::class,'rejected']); //
 Route::get('/buyRequest/accept/{id}',[BuyRequestController::class,'accept']); //accept a request
 Route::get('/buyRequest/reject/{id}',[BuyRequestController::class,'reject']); //reject a buy request
 Route::get('/saveCar/{userId}/{carId}',[WishlistController::class,'store']);
+Route::get('/deleteCar/{carId}',[CarsController::class,'destroy']);
 Route::get('/sellRequests',[SellRequestController::class,'index']); //pending sell requests
 Route::get('/sellRequests/accepted',[SellRequestController::class,'accepted']); //accepted sell requests
 Route::get('/sellRequests/rejected',[SellRequestController::class,'rejected']); //rejected sell requests
