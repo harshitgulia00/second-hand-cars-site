@@ -304,7 +304,7 @@ body{
 
                 <div class="buttons">
 
-                    <a href="buynow" class="btn buy-btn">
+                    <a href="/buynow/{{$details->id}}" class="btn buy-btn">
                         Buy Now
                     </a>
 

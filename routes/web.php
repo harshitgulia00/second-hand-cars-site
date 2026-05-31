@@ -4,10 +4,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SellRequestController;
 use App\Http\Controllers\CarsController;
 use App\Http\Controllers\ContactMessagesController;
+use App\Http\Controllers\BuyRequestController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('', [CarsController::class, 'featuredCars']);
-Route::get('/buynow', [BuyRequestController::class, 'create']);
+Route::get('buynow/{carId}', [BuyRequestController::class, 'create']);
+Route::post('buyRequest', [BuyRequestController::class, 'store']);
 Route::get('/explore',[CarsController::class,'index']);
 Route::post('/message',[ContactMessagesController::class,'store']);
 Route::post('/addCar',[CarsController::class, 'store']);

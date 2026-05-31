@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\Request;
 use App\Models\BuyRequest;
 use App\Http\Requests\StoreBuyRequestRequest;
 use App\Http\Requests\UpdateBuyRequestRequest;
@@ -60,18 +60,38 @@ class BuyRequestController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($id)
     {
-        
+        return view('buynow',["id"=>$id]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBuyRequestRequest $request)
-    {
-        //
-    }
+    public function store(Request $request)
+{
+    $request->validate([
+        'car_id' => 'required',
+        'name' => 'required',
+        'email' => 'required|email',
+        'phone' => 'required',
+        'message' => 'nullable'
+    ]);
+
+    $buyRequest = new BuyRequest();
+
+    $buyRequest->user_id = auth()->user()->id;
+    $buyRequest->car_id = $request->car_id;
+    $buyRequest->name = $request->name;
+    $buyRequest->email = $request->email;
+    $buyRequest->phone = $request->phone;
+    $buyRequest->message = $request->message;
+    $buyRequest->status = 'pending';
+
+    $buyRequest->save();
+
+    return redirect('/');
+}
 
     /**
      * Display the specified resource.
