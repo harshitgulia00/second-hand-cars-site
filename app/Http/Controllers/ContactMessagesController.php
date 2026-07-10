@@ -73,7 +73,7 @@ public function markAsRead($id)
         $messages->message = $request->message;
         
         $messages->save();
-        return view("contact");
+        return redirect("contact");
     }
 
     /**

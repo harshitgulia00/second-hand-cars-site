@@ -113,7 +113,7 @@
 <body>
 
 <nav class="navbar" id="navbar">
-  <div class="nav-logo"><img src="{{ asset('build/assets/logo.png') }}" alt="Logo"><span class="logo-text">Sunder</span><span class="logo-text" style="color: #c3b9ac;"  >Motors</span></div>
+  <div class="nav-logo"><img src="{{ asset('build/assets/logo.png') }}" alt="Logo"><span class="logo-text">Sundar</span><span class="logo-text" style="color: #c3b9ac;"  >Motors</span></div>
   <ul class="nav-links" id="navLinks">
     <li><a href="/">Home</a></li>
     <li><a href="/explore">Explore Cars</a></li>

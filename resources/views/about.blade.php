@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>About — SunderMotors</title>
+<title>About — SundarMotors</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -501,7 +501,7 @@ section{
     <div class="container hero-content">
         <span class="badge" data-reveal>
             <span class="dot"></span>
-            About SunderMotors
+            About SundarMotors
         </span>
 
         <h1 data-reveal>
@@ -528,7 +528,7 @@ section{
             </h2>
 
             <p>
-                SunderMotors started in 2014 in a small garage in Bengaluru, with one mission — give buyers a place they could trust, and sellers a price they deserved.
+                SundarMotors started in 2014 in a small garage in Bengaluru, with one mission — give buyers a place they could trust, and sellers a price they deserved.
             </p>
 
             <p>

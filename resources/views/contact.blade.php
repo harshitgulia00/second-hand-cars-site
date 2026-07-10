@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Contact — SunderMotors</title>
+<title>Contact — SundarMotors</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -363,7 +363,7 @@ textarea.form-control{
 
         <div class="badge" data-reveal>
             <span class="dot"></span>
-            Contact SunderMotors
+            Contact SundarMotors
         </div>
 
         <h1 data-reveal>
