@@ -25,11 +25,11 @@
 
     <div class="jko-actions">
 
-      <a href="#" class="nmu-btn nmu-main">
+      <a href="/explore" class="nmu-btn nmu-main">
         Explore >>
       </a>
 
-      <a href="#" class="nmu-btn nmu-alt">
+      <a href="/contact" class="nmu-btn nmu-alt">
         Contact >>
       </a>
 
