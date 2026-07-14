@@ -283,7 +283,7 @@
     <div class="wazxsw-flexfooter">
 
       <div class="edcvtg-priceblock">
-        <span style="font-size: 1.5rem;">₹{{$car -> price}}</span>
+        <span style="font-size: 1.4rem;">₹{{$car -> price}}</span>
       </div>
 
       <a href="/details/{{$car->id}}" class="qazplm-viewbutton">
