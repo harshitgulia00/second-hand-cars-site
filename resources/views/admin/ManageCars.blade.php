@@ -377,6 +377,8 @@ function deleteCar(id){
 }
 
 </script>
-
+<center style="margin: 20px;">
+    <a type="button" href="/" style="color: blue;border: 1px solid blue; padding: 5px 10px;width: 200px;height: 60px;border-radius: 20px;"> <- Back To Dashboard</a>
+</center>
 </body>
 </html>
